@@ -1,0 +1,29 @@
+
+.hero {
+    width: 100%;
+    min-height: 60vh;
+    position: relative;
+    padding: 60px 0;
+    display: flex
+;
+    align-items: center;}
+
+    section, .section {
+    color: var(--default-color);
+    background-color: var(--background-color);
+    padding: 60px 0;
+    scroll-margin-top: 92px;
+    overflow: clip;
+}
+
+.light-background {
+    --background-color: #f2f2f2;
+    --surface-color: #ffffff;
+}
+img{
+    border-radius: 8px;
+}
+.Title{
+        font-size: 6rem;
+    font-family: Cooper;
+}

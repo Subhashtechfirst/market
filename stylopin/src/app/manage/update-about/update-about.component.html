@@ -1,0 +1,213 @@
+
+ <div id="logo">
+        <span class="big-logo">Stylopin.in</span>
+        <span class="small-logo">S!M</span>
+    </div>
+    <div id="left-menu">
+        <ul>
+            <li routerLinkActive="active"><a routerLink="/Dashboard">
+                <i class="ion-ios-person-outline"></i>
+                <span>Product</span>
+            </a></li>
+            <li routerLinkActive="active"><a routerLink="/About">
+                <i class="ion-ios-albums-outline"></i>
+                <span>About</span>
+            </a></li>
+            <li routerLinkActive="active"><a routerLink="/Banner">
+                <i class="ion-ios-albums-outline"></i>
+                <span>Banner</span>
+            </a></li>
+            
+            <li routerLinkActive="active"><a routerLink="/BuyNow">
+                <i class="ion-ios-chatboxes-outline"></i>
+                <span>BuyNow</span>
+            </a></li>
+            
+             <li routerLinkActive="active"><a routerLink="/ContactUS">
+                <i class="ion-ios-chatboxes-outline"></i>
+                <span>Contact</span>
+            </a></li>
+
+        </ul>
+    </div>
+    <div id="main-content">
+        <div id="header" class="row">
+            <div class="header-left float-left col-sm-6" >
+                <i id="toggle-left-menu" class="ion-android-menu"></i>
+            </div>
+            <div class="header-right float-right col-sm-6 text-end">
+                <i class="ion-ios-people"></i>
+            </div>
+        </div>
+
+        <div id="page-container">
+            <div class="card">
+                <div class="title">Add About Details</div>
+                <div class="content">
+                    <div class="container-fluid">
+                        <div class="row my-2">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Title Name</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Sub Title Name</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row  my-2">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">About Image</label>
+                                    <input type="file" class="form-control">
+                                </div>
+                            </div>
+                       
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">About Description</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  my-2">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-secondary">Add Item</button>
+                                 <button type="reset" class="btn btn-danger">Cancel</button> 
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        
+
+            <div class="card">
+                <div class="title">About Details</div>
+                <div class="content">
+                    <div class="container-fluid">
+                        <table class="table table-bordered">
+						    <thead>
+						      <tr>
+						        <th>About Tilte Name</th>
+						        <th>About Sub Title Name </th>
+						        <th>About Image </th>
+						        <th>About Description</th>
+						        <th>Action</th>
+						      </tr>
+						    </thead>
+						    <tbody>
+                                @for (item of product; track $index; let i = $index) {
+						      <tr>
+						        <td>Office Chairs</td>
+						        <td>Available</td>
+						        <td>https://abcd.png</td>
+						        <td >The definition of available is someone or something that can be found, used or accessed. An example of an available option is a color that can be chosen for </td>
+						        <td>
+						        	
+                                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalp">Edit</button>
+                         
+                                    <button class="btn btn-danger" (click)="alertDeletFuntion()">Delete</button>
+						        </td>
+						      </tr>
+                              }
+						      
+						    </tbody>
+						  </table>
+
+                          <div class="m-2">
+                            <ul class="pagination justify-content-end pagination-sm">
+                                <li class="page-item active"><a class="page-link" href="javascript:void(0);">Previous</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
+                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
+                            </ul>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <span id="show-lable">Hello</span>
+
+
+
+   
+
+    <!-- The Modal -->
+    <div class="modal" id="myModalp">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+            <h4 class="modal-title">Edit Product</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <div class="content">
+                    <div class="container-fluid">
+                       
+                       
+                        <div class="row my-2">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Title Name</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Sub Title Name</label>
+                                    <input type="text" class="form-control">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row  my-2">
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">About Image</label>
+                                    <input type="file" class="form-control">
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">About Description</label>
+                                    <textarea class="form-control" rows="3"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row  my-2">
+                            <div class="col-sm-12">
+                                <button type="submit" class="btn btn-secondary">Edit Item</button>
+                                 <button type="reset" class="btn btn-danger">Cancel</button> 
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+        </div>
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+
+        </div>
+    </div>
+    </div>
