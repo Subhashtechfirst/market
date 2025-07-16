@@ -97,6 +97,7 @@
                         <table class="table table-bordered">
 						    <thead>
 						      <tr>
+                                <th>SR NO</th>
 						        <th>About Tilte Name</th>
 						        <th>About Sub Title Name </th>
 						        <th>About Image </th>
@@ -107,10 +108,11 @@
 						    <tbody>
                                 @for (item of product; track $index; let i = $index) {
 						      <tr>
+                                <td>{{i+1}}</td>
 						        <td>Office Chairs</td>
 						        <td>Available</td>
 						        <td>https://abcd.png</td>
-						        <td >The definition of available is someone or something that can be found, used or accessed. An example of an available option is a color that can be chosen for </td>
+						        <td width="400">The definition of available is someone or something that can be found, used or accessed. An example of an available option is a color that can be chosen for </td>
 						        <td>
 						        	
                                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalp">Edit</button>

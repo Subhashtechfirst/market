@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 })
 export class UpdateAboutComponent implements OnInit{
  constructor() { }
- product:any=[1,2,3,4,5,6,7]
+ product:any=[1,2,3]
   ngOnInit(): void {
   }
 

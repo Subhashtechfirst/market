@@ -91,6 +91,12 @@
                                     <input type="file" class="form-control">
                                 </div>
                             </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Number of Product</label>
+                                    <input type="number" class="form-control">
+                                </div>
+                            </div>
                         </div>
 
                         <div class="row  my-2">
@@ -123,11 +129,13 @@
                         <table class="table table-bordered">
 						    <thead>
 						      <tr>
+                                <th>SR NO</th>
 						        <th>Product Name</th>
 						        <th>Product Price </th>
 						        <th>Product Category</th>
 						        <th>Product Stock</th>
 						        <th>Product Image </th>
+                                 <th>Number of Product </th>
 						        <th>Product Description</th>
 						        <th>Action</th>
 						      </tr>
@@ -135,13 +143,15 @@
 						    <tbody>
                                 @for (item of product; track $index; let i = $index) {
 						      <tr>
+                                <td>{{i+1}}</td>
 						        <td>Office Chairs</td>
 						        <td>500.00</td>
 						        <td>Chair</td>
 						        <td>Available</td>
 						        <td>https://abcd.png</td>
 						        <td width="300">The definition of available is someone or something that can be found, used or accessed. An example of an available option is a color that can be chosen for </td>
-						        <td>
+						        <td>20</td>
+                                <td>
 						        	
                                     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModalp">Edit</button>
                          
@@ -234,6 +244,12 @@
                                 <div class="form-group">
                                     <label for="">Product Image</label>
                                     <input type="file" class="form-control">
+                                </div>
+                            </div>
+                             <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="">Number of Product</label>
+                                    <input type="number" class="form-control">
                                 </div>
                             </div>
                         </div>
