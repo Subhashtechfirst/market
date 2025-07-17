@@ -18,6 +18,7 @@ export class ContactComponent {
       email: ['', [Validators.required, Validators.email]],
       subject: ['', Validators.required],
       message: ['', Validators.required],
+      contactNumber:['', Validators.required],
     });
   }
 

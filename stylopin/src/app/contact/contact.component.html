@@ -77,8 +77,14 @@
                 <span *ngIf="contactUSform.get('email')?.errors?.['email']">Enter a valid email.</span>
               </div>
             </div>
+            <div class="col-md-6">
+              <input type="number" class="form-control"  placeholder="* Contact Number" formControlName="contactNumber">
+               <div *ngIf="contactUSform.get('contactNumber')?.touched && contactUSform.get('contactNumber')?.invalid" style="color: red;">
+                Contact Number is required.
+              </div>
+            </div>
 
-            <div class="col-md-12">
+            <div class="col-md-6">
               <input type="text" class="form-control"  placeholder="* Subject" formControlName="subject">
                <div *ngIf="contactUSform.get('subject')?.touched && contactUSform.get('subject')?.invalid" style="color: red;">
                 Subject is required.
