@@ -47,6 +47,9 @@
             <div class="card">
                 <div class="title">Product Order Details</div>
                 <div class="content">
+                    <div class="m-2 text-end">
+                        <pagination-controls (pageChange)="page = $event"></pagination-controls>
+                    </div>
                     <div class="container-fluid">
                         <div class="table-responsive">
                             <table class="table table-bordered">
@@ -69,8 +72,8 @@
 						      </tr>
 						    </thead>
 						    <tbody>
-                                @for (item of product; track $index; let i = $index) {
-						      <tr>
+                                <!-- @for (item of product; track $index; let i = $index) { -->
+						      <tr *ngFor="let item of product | paginate: { itemsPerPage: 5, currentPage: page }; let i = index">
                                 <td>Deepak Jadhav</td>
 						        <td>98989898</td>
 						        <td>deepakgmail.com</td>
@@ -92,22 +95,13 @@
                                     <button class="btn btn-danger" (click)="alertDeletFuntion(1)">Delete</button>
 						        </td>
 						      </tr>
-                              }
+                              <!-- } -->
 						      
 						    </tbody>
 						  </table>
                         </div>
 
-                          <div class="m-2">
-                            <ul class="pagination justify-content-end pagination-sm">
-                                <li class="page-item active"><a class="page-link" href="javascript:void(0);">Previous</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">1</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">4</a></li>
-                                <li class="page-item"><a class="page-link" href="javascript:void(0);">Next</a></li>
-                            </ul>
-                          </div>
+                          
                     </div>
                 </div>
             </div>

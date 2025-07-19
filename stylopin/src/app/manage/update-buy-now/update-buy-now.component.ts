@@ -1,9 +1,10 @@
+import { CommonModule } from '@angular/common';
 import { Component , OnInit} from '@angular/core';
 import { RouterModule } from '@angular/router';
-
+import { NgxPaginationModule } from 'ngx-pagination';
 @Component({
   selector: 'app-update-buy-now',
-  imports: [RouterModule],
+  imports: [RouterModule,NgxPaginationModule, CommonModule ],
   templateUrl: './update-buy-now.component.html',
   styleUrl: './update-buy-now.component.css'
 })
@@ -12,7 +13,7 @@ export class UpdateBuyNowComponent implements OnInit{
  product:any=[1,2,3,4,5,6,7]
   ngOnInit(): void {
   }
-
+ page = 1;
 
    alertDeletFuntion(id:any){
    var isConfirm=confirm("Are You sure Do you want to delete this product");
