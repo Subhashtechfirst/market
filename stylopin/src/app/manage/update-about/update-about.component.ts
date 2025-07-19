@@ -3,14 +3,17 @@ import { Component,
   OnInit } from '@angular/core';
 import { ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-
+import { MatDialog, MatDialogModule } from '@angular/material/dialog';
+import { MessageDialogComponent } from '../../message-dialog/message-dialog.component';
+import { LoaderComponent } from '../../loader/loader.component';
 @Component({
   selector: 'app-update-about',
-  imports: [RouterModule,ReactiveFormsModule,CommonModule],
+  imports: [RouterModule,ReactiveFormsModule,CommonModule ,LoaderComponent],
   templateUrl: './update-about.component.html',
   styleUrl: './update-about.component.css'
 })
 export class UpdateAboutComponent implements OnInit{
+isLoading = false;
 
  product:any=[1,2,3]
   ngOnInit(): void {
@@ -19,7 +22,7 @@ export class UpdateAboutComponent implements OnInit{
   aboutform: FormGroup;
   aboutUpdateform: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder,private dialog: MatDialog) {
     this.aboutform = this.fb.group({
       title: ['', Validators.required],
       subTitle: ['', Validators.required],
@@ -37,8 +40,19 @@ export class UpdateAboutComponent implements OnInit{
 
   }
 
+showDialog(message: string, type: 'success' | 'error' | 'warning') {
+    this.dialog.open(MessageDialogComponent, {
+      data: { message, type },
+    });
+  }
 
-
+  try(){
+    this.isLoading=true;
+    setTimeout(() => {
+    this.isLoading = false;
+    this.showDialog('Data saved!', 'success');
+  }, 3000);
+  }
 
   submit() {
     if (this.aboutform.invalid) {

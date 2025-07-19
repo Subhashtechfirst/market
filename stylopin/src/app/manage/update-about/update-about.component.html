@@ -100,8 +100,11 @@
                 </div>
             </div>
 
-
-        
+<button mat-raised-button color="primary" (click)="showDialog('Data saved!', 'success')">Show Success</button>
+    <button mat-raised-button color="warn" (click)="showDialog('Something went wrong.', 'error')">Show Error</button>
+    <button mat-raised-button color="accent" (click)="showDialog('This is a warning.', 'warning')">Show Warning</button>
+    <button (click)="try()">tst</button>
+         <app-loader *ngIf="isLoading"></app-loader>
 
             <div class="card">
                 <div class="title">About Details</div>
